@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dojos & Ninjas</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <div id="dojo_div">
+                <form action="/add_dojo" method="post" id="dojo_form">
+                    {% csrf_token %}
+                        <label for="name" class ="labels">Name</label>
+                        <input type="text"name="name">
+                            
+                        <label for="city" class ="labels">City</label>
+                        <input type="text" name="city">
+                            
+                        <label for="state" class ="labels">State</label>
+                        <input type="text" name="state">
+                            
+                        <label for="desc" id="selection">Description</label>
+                        <textarea name="desc"> </textarea>
+                    <button>Add</button>
+                </form>
+            </div>
+
+            <div id=ninja_div>
+                <form action="/add_ninja" method="post" id="ninja_form">
+                    {% csrf_token %}
+                    <label for="first_name" class ="labels">First Name</label>
+                        <input type="text"name="first_name">
+                    <label for="last_name" class ="labels">Last Name</label>
+                        <input type="text" name="last_name">
+                    <label for="dojos" id="selection">Dojo</label>
+                        <select name="dojo_select" required >
+                            {% for dojo in Dojos %}
+                                <option value="{{dojo.id}}" required>{{dojo.name}}</option>
+                            {% endfor %}
+                        </select>
+                    <button id="ninja_btn">Add</button>
+                </form>
+            </div>
+
+            <div id="ninjas_in_dojos">
+                <h1>All the Dojos<h1>
+                <form action="/delete_dojo" method="post">
+                {% csrf_token %}
+                    {% for dojo in Dojos %}
+                        <h2>Ninjas at {{ dojo.name }}</h2> 
+                        {% for ninjas in dojo.ninjas.all%}
+                            <ul>
+                                <li>{{ ninjas.first_name }} {{ ninjas.last_name }}</li>
+                            </ul>
+                        {% endfor %}
+                    {% endfor %}
+                    <button value="wind" name="delete_dojo" id="wind_btn">Delete wind</button>
+                    <button value="lightning" name="delete_dojo" id="lightning_btn">Delete light</button>
+                    <button value="rain" name="delete_dojo" id="rain_btn">Delete rain</button>
+                    <button value="cow" name="delete_dojo" id="cow_btn">Delete Cow Dojo</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

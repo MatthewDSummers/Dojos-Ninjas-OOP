@@ -1,0 +1,112 @@
+*{
+    padding: 0px;
+    margin: 0px auto;
+}
+body{
+    height: 1460px;
+    width: 1310px;
+    opacity: 0.9;
+    margin:30px;
+    padding: 6px;
+    box-shadow: 0px 0px 9px #6d1361;
+}
+#container{
+    height: 1420px;
+    width: 1270px;
+    padding: 20px;
+    box-shadow: 0px 0px 9px #b6a0b3;
+    background-color:#8480a0;
+}
+
+h1{
+    font-family: 'Lobster Two', cursive;
+    font-size: 40px;
+    color: #8a2034;
+    margin-left: 520px;
+}
+
+.labels{
+    color: #ffff00;
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+}
+#dojo_div{
+    width: 210px;
+    display: inline-block;
+    /* margin-top: 40px; */
+    /* float: left; */
+}
+#ninja_div{
+    /* float: right; */
+    width: 210px;
+    /* height: 400px; */
+    margin-left: 200px;
+    /* margin-bottom: 100px; */
+    /* padding-bottom: 100px; */
+    display: inline-block;
+}
+
+form input {
+    border: 0;
+    border-radius: 9px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a59c92;
+    box-shadow: 3px 2px 7px #5512a2;
+    text-align:center;
+    width: 200px;
+}
+textarea{
+    height: 40px;
+    width:200px;
+    border-radius: 9px;
+    resize: none;
+    background-color: #e3e3a3;
+}
+select{
+    width: 200px;
+    color: #212121;
+    background-color: #e3e3a3;
+    border-radius: 9px;
+    padding:4px;
+}
+#selection{
+    color: #ffff00;
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+}
+button{
+    width: 140px;
+    color: #e0e2ff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius:  120% 90% / 490% 0%;
+    padding: 4px 40px 2px;
+    background-color: #9d243a;
+    box-shadow: 3px 2px 4px #5512a2;
+    margin: 12px 30px 0px 6px;
+}
+h2{
+    color: #0d3412;
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+}
+
+li{
+    color: #871919;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    list-style: none;
+    margin-left:40px;
+}
+#wind_btn{
+    position: relative; bottom: 400px; left:320px;
+}
+#lightning_btn{
+    position: relative; bottom: 280px; left:130px;
+}#rain_btn{
+    position: relative; bottom: 150px; right:60px;
+}#cow_btn{
+    position: relative; bottom: 00px; right:250px;
+}
